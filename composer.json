@@ -1,0 +1,64 @@
+{
+	"name": "jweiland/events2-reserve-connector",
+	"type": "typo3-cms-extension",
+	"description": "This extension provides extended functionalities for integrating Events2 and Reserve extension.",
+	"license": "GPL-2.0-or-later",
+	"keywords": ["typo3", "TYPO3 CMS", "event", "events2_reserve_connector", "events2", "reserve"],
+	"homepage": "https://jweiland.net",
+	"authors": [
+		{
+			"name": "Stefan Froemken",
+			"email": "projects@jweiland.net",
+			"role": "Lead Developer"
+		},
+		{
+			"name": "Hoja Mustaffa Abdul Latheef",
+			"email": "projects@jweiland.net",
+			"role": "Senior TYPO3 Developer"
+		}
+	],
+	"support": {
+		"email": "projects@jweiland.net",
+		"issues": "https://github.com/jweiland-net/events2_reserve_connector/issues",
+		"source": "https://github.com/jweiland-net/events2_reserve_connector"
+	},
+	"require": {
+		"typo3/cms-core": "^12.4.8",
+		"jweiland/events2": "^9.0.5"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest",
+		"friendsofphp/php-cs-fixer": "^3.14",
+		"phpunit/phpunit": "^9.6",
+		"typo3/coding-standards": "^0.6",
+		"typo3/testing-framework": "^7.0.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"JWeiland\\Events2ReserveConnector\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"JWeiland\\Events2ReserveConnector\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"typo3-ter/events2-reserve-connector": "self.version"
+	},
+	"config": {
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin",
+		"allow-plugins": {
+			"typo3/cms-composer-installers": true,
+			"typo3/class-alias-loader": true
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "events2_reserve_connector",
+			"web-dir": ".Build/Web"
+		}
+	}
+}
