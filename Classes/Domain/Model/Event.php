@@ -33,7 +33,7 @@ class Event extends \JWeiland\Events2\Domain\Model\Event
      * @Extbase\Validate("NotEmpty")
      * @Extbase\ORM\Lazy
      */
-    protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage  $organizers;
+    protected \TYPO3\CMS\Extbase\Persistence\ObjectStorage $organizers;
 
     protected \DateTime $releaseDate;
 

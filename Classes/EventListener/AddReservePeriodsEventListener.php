@@ -39,7 +39,7 @@ class AddReservePeriodsEventListener extends AbstractControllerEventListener
     protected array $allowedControllerActions = [
         'Day' => [
             'show',
-        ]
+        ],
     ];
 
     protected QueryFactoryInterface $queryFactory;
@@ -80,13 +80,11 @@ class AddReservePeriodsEventListener extends AbstractControllerEventListener
                 $query->equals('facility', $this->getFacility($event)),
                 $query->equals('events2Event', $event->getUid()),
                 $query->equals('date', $date->getTimestamp()),
-                $query->equals('begin', $begin->getTimestamp())
+                $query->equals('begin', $begin->getTimestamp()),
             ])
         );
 
-        $result = $query->execute();
-
-        return $result;
+        return $query->execute();
     }
 
     protected function getStoragePagesForPeriods(Event $event): array
@@ -134,7 +132,7 @@ class AddReservePeriodsEventListener extends AbstractControllerEventListener
         if (!$facility instanceof Facility) {
             return null;
         }
-        echo "Ping (1709292505505): Line: " . __LINE__ . " File: " . __FILE__ . "<br>\n";
+        echo 'Ping (1709292505505): Line: ' . __LINE__ . ' File: ' . __FILE__ . "<br>\n";
         return $facility;
     }
 

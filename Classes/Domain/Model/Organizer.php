@@ -14,6 +14,4 @@ namespace JWeiland\Events2ReserveConnector\Domain\Model;
 /**
  * When using the OrganizerRepository this organizer model will be used by convention
  */
-class Organizer extends \JWeiland\Events2\Domain\Model\Organizer
-{
-}
+class Organizer extends \JWeiland\Events2\Domain\Model\Organizer {}

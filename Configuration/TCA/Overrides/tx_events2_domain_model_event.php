@@ -75,19 +75,19 @@ call_user_func(function () {
                     'columns' => [
                         'date' => [
                             'config' => [
-                                'readOnly' => true
-                            ]
+                                'readOnly' => true,
+                            ],
                         ],
                         'begin' => [
                             'config' => [
-                                'readOnly' => true
-                            ]
+                                'readOnly' => true,
+                            ],
                         ],
                         'end' => [
                             'config' => [
-                                'readOnly' => true
-                            ]
-                        ]
+                                'readOnly' => true,
+                            ],
+                        ],
                     ],
                     'types' => [
                         '1' => [
