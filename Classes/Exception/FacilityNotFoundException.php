@@ -14,6 +14,4 @@ namespace JWeiland\Events2ReserveConnector\Exception;
 /**
  * Use this exception if a required facility was not found
  */
-class FacilityNotFoundException extends \Exception
-{
-}
+class FacilityNotFoundException extends \Exception {}

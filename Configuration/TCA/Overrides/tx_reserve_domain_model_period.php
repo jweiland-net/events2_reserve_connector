@@ -15,9 +15,9 @@ if (!defined('TYPO3')) {
                 'foreign_table' => 'tx_events2_domain_model_event',
                 'minitems' => 0,
                 'maxitems' => 1,
-                'readOnly' => 1
-            ]
-        ]
+                'readOnly' => 1,
+            ],
+        ],
     ]
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

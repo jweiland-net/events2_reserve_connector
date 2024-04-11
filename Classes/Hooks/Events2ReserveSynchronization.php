@@ -320,7 +320,8 @@ class Events2ReserveSynchronization
         $timestamp = (int)$eventRecord['event_begin'];
         if (!MathUtility::canBeInterpretedAsInteger($eventRecord['event_begin'])) {
             $timestamp = (new \DateTime(
-                $eventRecord['event_begin'], new \DateTimeZone(date_default_timezone_get())
+                $eventRecord['event_begin'],
+                new \DateTimeZone(date_default_timezone_get())
             ))->getTimestamp();
             $timestamp -= date('Z', $timestamp);
         }

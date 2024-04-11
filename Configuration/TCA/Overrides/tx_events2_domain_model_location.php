@@ -14,7 +14,7 @@ $GLOBALS['TCA']['tx_events2_domain_model_location']['columns']['facility']['desc
 
 // Add field information to facility to give editor a colorful status for better understanding
 $GLOBALS['TCA']['tx_events2_domain_model_location']['columns']['facility']['config']['fieldWizard']['checkFacility'] = [
-    'renderType' => 'checkFacility'
+    'renderType' => 'checkFacility',
 ];
 
 // Set address columns as required. Ticket#20169963
