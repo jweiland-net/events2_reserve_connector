@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-07-06T07:49:10Z"
+		  product-name="events2_reserve_connector">
+		<header/>
+		<body>
+			<trans-unit id="tx_events2_domain_model_event.facebook">
+				<source>Release on facebook</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.release_date">
+				<source>Release date</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.social_teaser">
+				<source>Short description</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.theater_details">
+				<source>Theater description</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_time.time_begin">
+				<source>Time Begin</source>
+			</trans-unit>
+			<trans-unit id="events2.differentOpeningTimes">
+				<source>Warning! Has not opened every day or does have different opening hours.</source>
+			</trans-unit>
+			<trans-unit id="events2.furtherInformation">
+				<source>Further information</source>
+			</trans-unit>
+			<trans-unit id="events2.no_events_found">
+				<source>No event found.</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.facilityNotFound.title">
+				<source>Missing facility in the location record!</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.facilityNotFound.description">
+				<source>You have indicated that this event requires registration. For this to work, a facility must be assigned
+					to the location record of this event.
+				</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.success.synchronizedEvent">
+				<source>The event was synchronized with the time slot (period).</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.success.everythingOK.title">
+				<source>Everything OK</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.success.everythingOK.description">
+				<source>No problems detected</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.deletedFacility.title">
+				<source>Facility not found</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.deletedFacility.description">
+				<source>It seems that facility was removed. Please choose an alternative facility</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.warning.missingFacility.title">
+				<source>No facility selected</source>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.warning.missingFacility.description">
+				<source>As some related event records needs registration you have to select a facility.</source>
+			</trans-unit>
+			<trans-unit id="reserve.remainingParticipants">
+				<source>Remaining participants</source>
+			</trans-unit>
+			<trans-unit id="reserve.reservePlace">
+				<source>Reserve a place</source>
+			</trans-unit>
+			<trans-unit id="reserve.showAllBookingPeriods">
+				<source>Show all bookingPeriods</source>
+			</trans-unit>
+			<trans-unit id="reserve.error.noBookingPeriodFound">
+				<source>Could not find any booking periods for given time.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

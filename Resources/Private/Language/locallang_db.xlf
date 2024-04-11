@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-07-06T07:45:56Z"
+		  product-name="events2_reserve_connector">
+		<header/>
+		<body>
+			<trans-unit id="tx_events2_domain_model_event.tab.social">
+				<source>Social</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.facebook">
+				<source>Release on facebook</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.release_date">
+				<source>Release date</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.social_teaser">
+				<source>Short description</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.theater_details">
+				<source>Theater description</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.deadline">
+				<source>Deadline</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.reserve_period">
+				<source>Period</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.reserve_period.description">
+				<source>If you set registration to required we will create a new period automatically for you while saving.</source>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_location.facility.description">
+				<source>Please assign a facility to this location if this record is associated with an event that requires registration.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

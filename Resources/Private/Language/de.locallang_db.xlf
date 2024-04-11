@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-07-06T07:45:56Z" product-name="events2_reserve_connector">
+		<header/>
+		<body>
+			<trans-unit id="tx_events2_domain_model_event.tab.social">
+				<source>Social</source>
+				<target>Soziale Netzwerke</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.facebook">
+				<source>Release on facebook</source>
+				<target>Auf Facebook veröffentlichen</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.release_date">
+				<source>Release date</source>
+				<target>Datum der Veröffentlichung</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.social_teaser">
+				<source>Short description</source>
+				<target>Kurzbeschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.theater_details">
+				<source>Theater description</source>
+				<target>Stückdetails</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.deadline">
+				<source>Deadline</source>
+				<target>Anmeldefrist</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.reserve_period">
+				<source>Period</source>
+				<target>Zeitblock</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.reserve_period.description">
+				<source>If you set registration to required we will create a new period automatically for you while saving.</source>
+				<target>Wenn das Feld Registrierung erforderlich aktiviert wird, wird automatisch ein Zeitblock Datensatz während des Speicherns angelegt.</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_location.facility.description">
+				<source>Please assign a facility to this location if this record is associated with an event that requires registration.</source>
+				<target>Bitte weisen Sie diesem Veranstaltungsort eine Einrichtung zu, sofern dieser Datensatz mit einer Veranstaltung verknüpft ist, die eine Registrierung erfordert.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

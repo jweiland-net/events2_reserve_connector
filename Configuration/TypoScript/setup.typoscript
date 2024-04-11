@@ -1,0 +1,8 @@
+plugin.tx_events2 {
+  view {
+    partialRootPaths {
+      10 = EXT:events2_reserve_connector/Resources/Events/Partials/
+    }
+  }
+}
+

@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  JWeiland\Events2ReserveConnector\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/Domain/Model/*'
+
+  JWeiland\Events2ReserveConnector\EventListener\AddReservePeriodsEventListener:
+    tags:
+      - name: event.listener
+        event: JWeiland\Events2\Event\PostProcessFluidVariablesEvent

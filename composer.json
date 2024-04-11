@@ -24,7 +24,7 @@
 	},
 	"require": {
 		"typo3/cms-core": "^12.4.8",
-		"jweiland/events2": "^9.0.5"
+		"jweiland/events2": "^9.0.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest",
@@ -36,11 +36,6 @@
 	"autoload": {
 		"psr-4": {
 			"JWeiland\\Events2ReserveConnector\\": "Classes"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"JWeiland\\Events2ReserveConnector\\Tests\\": "Tests"
 		}
 	},
 	"replace": {

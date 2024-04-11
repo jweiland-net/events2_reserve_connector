@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2020-07-06T07:49:10Z"
+		  product-name="events2_reserve_connector">
+		<header/>
+		<body>
+			<trans-unit id="tx_events2_domain_model_event.facebook">
+				<source>Release on facebook</source>
+				<target>Auf Facebook veröffentlichen</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.release_date">
+				<source>Release date</source>
+				<target>Datum der Veröffentlichung</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.social_teaser">
+				<source>Short description</source>
+				<target>Kurzbeschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_event.theater_details">
+				<source>Theater description</source>
+				<target>Stückdetails</target>
+			</trans-unit>
+			<trans-unit id="tx_events2_domain_model_time.time_begin">
+				<source>Time Begin</source>
+				<target>Beginn</target>
+			</trans-unit>
+			<trans-unit id="events2.differentOpeningTimes">
+				<source>Warning! Has not opened every day or does have different opening hours.</source>
+				<target>Achtung! Hat nicht jeden Tag geöffnet oder unterschiedliche Öffnungszeiten.</target>
+			</trans-unit>
+			<trans-unit id="events2.furtherInformation">
+				<source>Further information</source>
+				<target>Weitere Infos</target>
+			</trans-unit>
+			<trans-unit id="events2.no_events_found">
+				<source>No event found.</source>
+				<target>Keine Veranstaltung gefunden.</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.facilityNotFound.title">
+				<source>Missing facility in the location record!</source>
+				<target>Fehlende Einrichtung im Veranstaltungsort!</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.facilityNotFound.description">
+				<source>You have indicated that this event requires registration. For this to work, a facility must be assigned
+					to the location record of this event.
+				</source>
+				<target>Sie haben angegeben, dass diese Veranstaltung eine Registrierung erfordert. Damit das funktioniert muss
+					dem Veranstaltungsort dieser Veranstaltung eine Einrichtung zugewiesen werden.
+				</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.success.synchronizedEvent">
+				<source>The event was synchronized with the time slot (period).</source>
+				<target>Das Event wurde erfolgreich mit dem Zeitblock synchronisiert.</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.success.everythingOK.title">
+				<source>Everything OK</source>
+				<target>Alles OK</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.success.everythingOK.description">
+				<source>No problems detected</source>
+				<target>Keine Probleme erkannt</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.deletedFacility.title">
+				<source>Facility not found</source>
+				<target>Einrichtung nicht gefunden</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.error.deletedFacility.description">
+				<source>It seems that facility was removed. Please choose an alternative facility</source>
+				<target>Es scheint, dass die Einrichtung gelöscht wurde. Bitte wählen Sie eine alternative Einrichtung.</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.warning.missingFacility.title">
+				<source>No facility selected</source>
+				<target>Keine Einrichtung ausgewählt</target>
+			</trans-unit>
+			<trans-unit id="events2ReserveSynchronization.warning.missingFacility.description">
+				<source>As some related event records needs registration you have to select a facility.</source>
+				<target>Da einige zugehörige Veranstaltungsdatensätze eine Registrierung erfordern, müssen Sie eine Einrichtung
+					auswählen.
+				</target>
+			</trans-unit>
+			<trans-unit id="reserve.remainingParticipants">
+				<source>Remaining participants</source>
+				<target>Verbleibende Teilnehmer</target>
+			</trans-unit>
+			<trans-unit id="reserve.reservePlace">
+				<source>Reserve a place</source>
+				<target>Platz reservieren</target>
+			</trans-unit>
+			<trans-unit id="reserve.showAllBookingPeriods">
+				<source>Show all bookingPeriods</source>
+				<target>Alle Buchungszeiträume anzeigen</target>
+			</trans-unit>
+			<trans-unit id="reserve.error.noBookingPeriodFound">
+				<source>Could not find any booking periods for given time.</source>
+				<target>Konnte keine Buchungszeiträume für die angegebene Zeit finden.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

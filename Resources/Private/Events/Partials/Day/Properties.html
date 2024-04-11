@@ -1,0 +1,250 @@
+<html lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:e2="http://typo3.org/ns/JWeiland/Events2/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="events-single grid">
+    <div class="col-12">
+        <div>
+            <f:render partial="Event/Elements" section="category" arguments="{event: day.event}"/>
+        </div>
+        <h1>{day.event.title}</h1>
+        <h2 class="fontsize4 text-maxwidth">{day.event.teaser}</h2>
+    </div>
+    <aside class="col-4_md-12">
+        <div class="infobox">
+            <dl>
+                <f:render section="ShowDateAndTimes" arguments="{day: day, date: day.day, times: day.times}"/>
+            </dl>
+            <f:if condition="{day.event.location}">
+                <f:render section="Location" arguments="{event: day.event}"/>
+                <f:render section="GoogleRoute" arguments="{event: day.event}"/>
+            </f:if>
+            <f:if condition="{day.event.organizers}">
+                <f:render section="Organizers" arguments="{event: day.event}"/>
+            </f:if>
+            <f:render section="RenderFacility" arguments="{_all}"/>
+            <f:render section="FreeEntry" arguments="{event: day.event}"/>
+            <f:render section="ICalendar" arguments="{day: day}"/>
+
+            <f:if condition="{day.event.alternativeTimesIncludingRemovedGroupedAndSorted -> f:count()} > 1">
+                <div class="accordion">
+                    <p class="header action btn-secondary">
+                        <span class="h3">{f:translate(key: "alternativeEventDates")}</span>
+                    </p>
+                    <div>
+                        <f:for each="{day.event.alternativeTimesIncludingRemovedGroupedAndSorted}" as="alternatives">
+                            <dl class="dd-bordered">
+                                <f:render section="ShowDateAndTimes" arguments="{day: day, date: alternatives.date, times: alternatives.times}"/>
+                            </dl>
+                        </f:for>
+                    </div>
+                </div>
+            </f:if>
+        </div>
+        <f:render section="TicketLink" arguments="{event: day.event}"/>
+    </aside>
+    <div class="col-8_md-12 float-right">
+        <f:render section="RenderImages" arguments="{event: day.event}"/>
+        <f:render section="VideoLink" arguments="{event: day.event}"/>
+        <f:format.html>{day.event.detailInformation}</f:format.html>
+        <f:render section="DownloadLinks" arguments="{event: day.event}"/>
+    </div>
+</div>
+
+<f:section name="renderImages">
+    <f:if condition="{0: settings.display}!={0: 'displayEvent'}">
+        <f:render partial="ExtensionComponents/Images" arguments="{images: event}"/>
+    </f:if>
+</f:section>
+
+<f:section name="videoLink">
+    <f:if condition="{event.videoLink}">
+        <f:link.action action="show" controller="Video" arguments="{event: event}">
+            <span class="fal fa-video fa-fw" aria-hidden="true"></span>
+            {f:if(condition: event.videoLink.title, then: event.videoLink.title, else: 'Video')}
+        </f:link.action>
+    </f:if>
+</f:section>
+
+<f:section name="downloadLinks">
+    <f:if condition="{event.downloadLinks}">
+        <ul class="no-bullets">
+            <f:for each="{event.downloadLinks}" as="downloadLink">
+                <f:if condition="{downloadLink.title}">
+                    <li>
+                        <f:link.typolink parameter="{downloadLink.link}" title="{downloadLink.title}">
+                            <span class="fa fa-download fa-fw" aria-hidden="true"></span>&nbsp;{downloadLink.title}
+                        </f:link.typolink>
+                    </li>
+                </f:if>
+            </f:for>
+        </ul>
+    </f:if>
+</f:section>
+
+<f:section name="showDateAndTimes">
+    <f:if condition="{times -> f:count()}">
+        <f:then>
+            <f:for each="{times}" as="time">
+                <f:render section="ShowDateAndTime" arguments="{day: day, date: date, time: time}"/>
+            </f:for>
+        </f:then>
+        <f:else>
+            <f:render section="ShowDateAndTime" arguments="{day: day, date: date}"/>
+        </f:else>
+    </f:if>
+</f:section>
+
+<f:section name="ShowDateAndTime">
+    <dt class="nth-child">
+        {f:if(condition: '{e2:isDateMarkedAsCanceled(event: day.event, date: date)}', then: '<s>')}
+        {date -> f:format.date(format: '%a. %d.%m.%Y')}
+        {f:if(condition: '{e2:isDateMarkedAsCanceled(event: day.event, date: date)}', then: '</s>')}
+    </dt>
+    <dd>
+        <f:render partial="Event/Time" arguments="{time: time}"/>
+        <f:for each="{e2:getExceptionsFromEventForSpecificDate(event: day.event, date: date, type: 'add,time,info')}" as="exception">
+            <br><em>{exception.exceptionDetails -> f:format.html(parseFuncTSPath: 'lib.parseFunc') -> f:format.nl2br()}</em>
+        </f:for>
+    </dd>
+</f:section>
+
+<f:section name="Location">
+    <dl>
+        <dt><f:translate key="tx_events2_domain_model_event.location"/></dt>
+        <f:if condition="{event.location.link}">
+            <f:then>
+                <dd>
+                    <f:if condition="{event.location.link.title}">
+                        <f:then>
+                            <f:link.typolink parameter="{event.location.link.link}" title="{event.location.link.title}">{event.location.link.title}</f:link.typolink>
+                        </f:then>
+                        <f:else>
+                            <f:link.typolink parameter="{event.location.link.link}" title="{event.location.location}">{event.location.location}</f:link.typolink>
+                        </f:else>
+                    </f:if>
+                </dd>
+            </f:then>
+            <f:else>
+                <dd class="icon-text">
+                    <i class="fal fa-map-marker-alt fa-lg fa-fw" aria-hidden="true"></i>
+                    <f:render partial="Event/Link/LocationLink" section="RenderLink" arguments="{_all}"/>
+                </dd>
+            </f:else>
+        </f:if>
+    </dl>
+</f:section>
+
+<f:section name="GoogleRoute">
+    <f:if condition="{event.location.street}">
+        <dl>
+            <dt>Anfahrt</dt>
+            <dd class="icon-text">
+                <i class="fal fa-map fa-lg fa-fw" aria-hidden="true"></i>
+                <f:variable name="address">{event.location.street} {event.location.houseNumber} {event.location.zip} {event.location.city}</f:variable>
+                <f:link.external target="_blank" uri="https://www.google.de/maps/dir//{address->f:format.urlencode()}"><f:translate key="routePlanner"/> (Google Maps)</f:link.external>
+            </dd>
+        </dl>
+    </f:if>
+</f:section>
+
+<f:section name="Organizers">
+    <dl class="dd-spacer">
+        <dt>{f:translate(key: "tx_events2_domain_model_event.organizers")}</dt>
+        <f:for each="{event.organizers}" as="organizer">
+            <dd>
+                <f:if condition="{organizer.link}">
+                    <f:then>
+                        <f:link.typolink parameter="{organizer.link.link}" target="_blank" title="{organizer.organizer}">
+                            {organizer.organizer}
+                            <f:if condition="{organizer.link.title}"><br/>({organizer.link.title})</f:if>
+                        </f:link.typolink>
+                    </f:then>
+                    <f:else>
+                        {organizer.organizer}
+                    </f:else>
+                </f:if>
+            </dd>
+        </f:for>
+    </dl>
+</f:section>
+
+<f:section name="RenderFacility">
+    <f:if condition="{day.event.registrationRequired}">
+        <f:if condition="{day.event.location.facility.uid}">
+            <f:then>
+                ping1
+                <f:if condition="{day.event.location.facility.periods}">
+                    <f:then>
+                        ping2
+                        <f:for each="{day.event.location.facility.periods}" as="period">
+                            <p>
+                                {f:translate(key: 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang.xlf:reserve.remainingParticipants')}:
+                                {period.remainingParticipants}
+                            </p>
+                            <f:if condition="{period.isBookable}">
+                                <f:link.action pageUid="{settings.pidOfReserveRegistration}"
+                                               extensionName="reserve"
+                                               pluginName="reservation"
+                                               controller="Checkout"
+                                               action="form"
+                                               arguments="{period: period}">
+                                    {f:translate(key: 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang.xlf:reserve.reservePlace')}
+                                </f:link.action>
+                                <br>
+                                <f:link.action pageUid="{settings.pidOfReserveRegistration}"
+                                               extensionName="reserve"
+                                               pluginName="reservation"
+                                               controller="Checkout"
+                                               action="list">
+                                    {f:translate(key: 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang.xlf:reserve.showAllBookingPeriods')}
+                                </f:link.action>
+                            </f:if>
+                        </f:for>
+                    </f:then>
+                    <f:else>
+                        {f:translate(key: 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang.xlf:reserve.error.noBookingPeriodFound')}
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                {f:translate(key: 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang.xlf:event.error.missingRelatedFacility')}
+            </f:else>
+        </f:if>
+    </f:if>
+</f:section>
+
+<f:section name="FreeEntry">
+    <f:if condition="{event.freeEntry}">
+        <dl>
+            <dt><f:translate key="tx_events2_domain_model_event.free_entry"/></dt>
+            <dd><f:translate key="tx_events2_domain_model_event.yes"/></dd>
+        </dl>
+    </f:if>
+</f:section>
+
+<f:section name="ICalendar">
+    <dl>
+        <dt class="vhidden">iCalender Link</dt>
+        <dd class="icon-text">
+            <span class="fal fa-calendar-plus fa-lg fa-fw" aria-hidden="true"></span>
+            <f:link.action action="download" controller="ICal" target="_blank" arguments="{dayUid: day.uid}">
+                {f:translate(key: 'export')}
+            </f:link.action>
+        </dd>
+    </dl>
+</f:section>
+
+<f:section name="TicketLink">
+    <f:if condition="{event.ticketLink.link}">
+        <f:link.typolink class="btn btn-primary ticket"
+                         parameter="{event.ticketLink.link}"
+                         title="{f:translate(key: 'tx_events2_domain_model_event.ticket_link')}"
+                         target="_blank">
+            <i class="fa fa-ticket-alt fa-fw2" aria-hidden="true"></i>
+            <span>{f:if(condition: event.ticketLink.title, then: event.ticketLink.title, else: event.ticketLink.link)}</span>
+        </f:link.typolink>
+    </f:if>
+</f:section>
+</html>
