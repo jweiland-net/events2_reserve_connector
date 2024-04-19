@@ -20,6 +20,7 @@ if (!defined('TYPO3')) {
         ],
     ]
 );
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'tx_reserve_domain_model_period',
     'events2_event'

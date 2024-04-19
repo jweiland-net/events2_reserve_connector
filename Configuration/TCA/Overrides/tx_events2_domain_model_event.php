@@ -63,9 +63,9 @@ call_user_func(function () {
         ],
         'reserve_period' => [
             'exclude' => 1,
-            'displayCond' => 'FIELD:registration_required:REQ:true',
-            'description' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.reserve_period.description',
             'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.reserve_period',
+            'description' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.reserve_period.description',
+            'displayCond' => 'FIELD:registration_required:REQ:true',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_reserve_domain_model_period',
