@@ -1,10 +1,10 @@
 # TYPO3 Extension `events2_reserve_connector`
 
-[![Latest Stable Version](https://poser.pugx.org/jweiland/events2_reserve_connector/v/stable.svg)](https://packagist.org/packages/jweiland/events2_reserve_connector)
+[![Latest Stable Version](https://poser.pugx.org/jweiland/events2-reserve-connector/v/stable.svg)](https://packagist.org/packages/jweiland/events2-reserve-connector)
 [![TYPO3 12.4](https://img.shields.io/badge/TYPO3-12.4-green.svg)](https://get.typo3.org/version/12)
-[![License](http://poser.pugx.org/jweiland/events2_reserve_connector/license)](https://packagist.org/packages/jweiland/events2_reserve_connector)
-[![Total Downloads](https://poser.pugx.org/jweiland/events2_reserve_connector/downloads.svg)](https://packagist.org/packages/jweiland/events2_reserve_connector)
-[![Monthly Downloads](https://poser.pugx.org/jweiland/events2_reserve_connector/d/monthly)](https://packagist.org/packages/jweiland/events2_reserve_connector)
+[![License](http://poser.pugx.org/jweiland/events2-reserve-connector/license)](https://packagist.org/packages/jweiland/events2-reserve-connector)
+[![Total Downloads](https://poser.pugx.org/jweiland/events2-reserve-connector/downloads.svg)](https://packagist.org/packages/jweiland/events2-reserve-connector)
+[![Monthly Downloads](https://poser.pugx.org/jweiland/events2-reserve-connector/d/monthly)](https://packagist.org/packages/jweiland/events2-reserve-connector)
 ![Build Status](https://github.com/jweiland-net/events2_reserve_connector/actions/workflows/typo3_12.yml/badge.svg)
 
 The Events2 Reserve Connector extension provides extended functionalities for
