@@ -1,7 +1,7 @@
-########################
-# jweiland.net events2
+########################################
+# jweiland.net events2_reserve_connector
 # global ignore file
-########################
+########################################
 
 # ignore generated documentation
 *GENERATED*

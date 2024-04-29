@@ -7,11 +7,6 @@
 	"homepage": "https://jweiland.net",
 	"authors": [
 		{
-			"name": "Stefan Froemken",
-			"email": "projects@jweiland.net",
-			"role": "Lead Developer"
-		},
-		{
 			"name": "Hoja Mustaffa Abdul Latheef",
 			"email": "projects@jweiland.net",
 			"role": "Senior TYPO3 Developer"
