@@ -19,7 +19,8 @@
 	},
 	"require": {
 		"typo3/cms-core": "^12.4.8",
-		"jweiland/events2": "^9.0.0"
+		"jweiland/events2": "^9.0.0",
+		"jweiland/reserve": "^3.0.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest",
