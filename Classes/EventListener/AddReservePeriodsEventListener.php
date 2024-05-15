@@ -76,7 +76,7 @@ class AddReservePeriodsEventListener extends AbstractControllerEventListener
         $begin = new \DateTime(sprintf('1970-01-01T%d:%d:%dZ', ...GeneralUtility::intExplode(':', $dateTime->format('H:i:s'))));
         $query = $this->createQuery($this->getStoragePagesForPeriods($event));
         $query->matching(
-            $query->logicalAnd([
+            $query->logicalAnd(...[
                 $query->equals('facility', $this->getFacility($event)),
                 $query->equals('events2Event', $event->getUid()),
                 $query->equals('date', $date->getTimestamp()),
@@ -124,15 +124,15 @@ class AddReservePeriodsEventListener extends AbstractControllerEventListener
     {
         /** @var \JWeiland\Events2ReserveConnector\Domain\Model\Location $location */
         $location = $event->getLocation();
-
         if (!$location instanceof Location) {
             return null;
         }
+
         $facility = $location->getFacility();
         if (!$facility instanceof Facility) {
             return null;
         }
-        echo 'Ping (1709292505505): Line: ' . __LINE__ . ' File: ' . __FILE__ . "<br>\n";
+
         return $facility;
     }
 
