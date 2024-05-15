@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
 call_user_func(static function () {
-    $EXT_KEY ='events2_reserve_connector';
+    $EXT_KEY = 'events2_reserve_connector';
 
     // Extend EXT:event2 domain models
     $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['events2']['extender'][\JWeiland\Events2\Domain\Model\Event::class][$EXT_KEY] =
@@ -26,4 +28,8 @@ call_user_func(static function () {
         = \JWeiland\Events2ReserveConnector\Hooks\Events2ReserveSynchronization::class;
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']['facility'] = 'tx_reserve_domain_model_facility';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\JWeiland\Events2\Domain\Model\Location::class] = [
+        'className' => \JWeiland\Events2ReserveConnector\Domain\Model\Location::class,
+    ];
 });
