@@ -117,6 +117,7 @@ class AddReservePeriodsEventListener extends AbstractControllerEventListener
             )
             ->executeQuery()
             ->fetchAssociative();
+
         return is_array($storagePage) ? [$storagePage['uid']] : [0];
     }
 
