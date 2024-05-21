@@ -13,5 +13,4 @@ events2_reserve_connector.
 ..  toctree::
     :maxdepth: 2
 
-    Extension/Index
     TypoScript/Index

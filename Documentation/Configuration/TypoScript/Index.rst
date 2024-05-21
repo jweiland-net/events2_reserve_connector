@@ -1,16 +1,32 @@
 ..  include:: /Includes.rst.txt
 
 
-..  _configuration:
+..  _typoScript:
 
-=============
-Configuration
-=============
+==========
+TypoScript
+==========
 
-..  tip::
+In this extension we used TypoScript for overriding the fluid template paths of
+events2 and reserve extensions.
 
-    You must configure the extension events2 and reserve extensions first to run
-    this extension correctly.
+Inside our extension we override the e-mail template partial of reserve extension to add event
+details. (EXT:/Resources/Private/Reserve/Partials/Mail/ReservationDetails.html)
 
-    `Events2 Documentation <https://docs.typo3.org/p/jweiland/events2/master/en-us/>`_
-    `Reserve Documentation <https://docs.typo3.org/p/jweiland/reserve/master/en-us/>`_
+.. code-block:: typoscript
+
+    plugin.tx_events2 {
+      view {
+        partialRootPaths {
+          10 = EXT:events2_reserve_connector/Resources/Events/Partials/
+        }
+      }
+    }
+
+    plugin.tx_reserve {
+      view {
+        partialRootPaths {
+          10 = EXT:events2_reserve_connector/Resources/Private/Reserve/Partials/
+        }
+      }
+    }
