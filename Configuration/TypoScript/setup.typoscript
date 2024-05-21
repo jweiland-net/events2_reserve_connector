@@ -6,3 +6,10 @@ plugin.tx_events2 {
   }
 }
 
+plugin.tx_reserve {
+  view {
+    partialRootPaths {
+      10 = EXT:events2_reserve_connector/Resources/Private/Reserve/Partials/
+    }
+  }
+}
