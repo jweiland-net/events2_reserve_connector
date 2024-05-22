@@ -15,7 +15,7 @@ command:
 
 ..  code-block:: bash
 
-    composer req jweiland/events2_reserve_connector
+    composer require jweiland/events2-reserve-connector
     vendor/bin/typo3 extension:setup --extension=events2_reserve_connector
 
 If you work with DDEV please execute this command:
@@ -53,8 +53,3 @@ On non composer based TYPO3 installations you can install
     Choose the `events2_reserve_connector`
     line from the search result and click on the cloud icon to
     install `events2_reserve_connector`.
-
-Next step
-=========
-
-:ref:`Configure events2_reserve_connector <configuration>`.

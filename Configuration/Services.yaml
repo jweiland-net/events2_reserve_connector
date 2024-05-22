@@ -13,3 +13,24 @@ services:
     tags:
       - name: event.listener
         event: JWeiland\Events2\Event\PostProcessFluidVariablesEvent
+
+  JWeiland\Events2ReserveConnector\Domain\Model\Event:
+    tags:
+      -
+        name: 'extender.extends'
+        class: JWeiland\Events2\Domain\Model\Event
+
+  JWeiland\Events2ReserveConnector\Domain\Model\Location:
+    tags:
+      - name: 'extender.extends'
+        class: JWeiland\Events2\Domain\Model\Location
+
+  JWeiland\Events2ReserveConnector\Domain\Model\Organizer:
+    tags:
+      - name: 'extender.extends'
+        class: JWeiland\Events2\Domain\Model\Organizer
+
+  JWeiland\Events2ReserveConnector\Domain\Model\Period:
+    tags:
+      - name: 'extender.extends'
+        class: JWeiland\Reserve\Domain\Model\Period

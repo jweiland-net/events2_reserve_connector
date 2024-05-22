@@ -10,10 +10,8 @@ call_user_func(function () {
             'exclude' => true,
             'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.release_date',
             'config' => [
-                'type' => 'input',
-                'size' => 7,
-                'eval' => 'date',
-                'checkbox' => 1,
+                'type' => 'datetime',
+                'format' => 'date',
                 'default' => 0,
             ],
         ],

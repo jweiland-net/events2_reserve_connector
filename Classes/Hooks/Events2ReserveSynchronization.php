@@ -172,7 +172,7 @@ class Events2ReserveSynchronization
     private function addPeriodToDatamap(DataHandler $dataHandler, $periodUid, array $periodData): void
     {
         $periodFromRequest = [];
-        if (isset($dataHandler->datamap[self::RESERVE_PERIOD_TABLE]) &&
+        if (isset($dataHandler->datamap[self::RESERVE_PERIOD_TABLE][$periodUid]) &&
             is_array($dataHandler->datamap[self::RESERVE_PERIOD_TABLE][$periodUid])
         ) {
             $periodFromRequest = $dataHandler->datamap[self::RESERVE_PERIOD_TABLE][$periodUid];

@@ -19,6 +19,7 @@
 	},
 	"require": {
 		"typo3/cms-core": "^12.4.8",
+		"evoweb/extender": "^10.1.1",
 		"jweiland/events2": "^9.0.0",
 		"jweiland/reserve": "^3.0.0"
 	},

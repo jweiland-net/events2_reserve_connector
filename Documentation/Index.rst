@@ -18,7 +18,7 @@ Events2 Reserve Connector
     en
 
 :Author:
-    Hoja Mustaffa Abdul Latheef, Stefan Froemken
+    Hoja Mustaffa Abdul Latheef
 
 :License:
     This document is published under the
