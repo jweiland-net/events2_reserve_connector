@@ -4,21 +4,6 @@
 		  product-name="events2_reserve_connector">
 		<header/>
 		<body>
-			<trans-unit id="tx_events2_domain_model_event.tab.social">
-				<source>Social</source>
-			</trans-unit>
-			<trans-unit id="tx_events2_domain_model_event.facebook">
-				<source>Release on facebook</source>
-			</trans-unit>
-			<trans-unit id="tx_events2_domain_model_event.release_date">
-				<source>Release date</source>
-			</trans-unit>
-			<trans-unit id="tx_events2_domain_model_event.social_teaser">
-				<source>Short description</source>
-			</trans-unit>
-			<trans-unit id="tx_events2_domain_model_event.theater_details">
-				<source>Theater description</source>
-			</trans-unit>
 			<trans-unit id="tx_events2_domain_model_event.deadline">
 				<source>Deadline</source>
 			</trans-unit>
