@@ -4,53 +4,12 @@ if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
-call_user_func(function () {
-    $extendedColumns = [
-        'release_date' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.release_date',
-            'config' => [
-                'type' => 'datetime',
-                'format' => 'date',
-                'default' => 0,
-            ],
-        ],
-        'social_teaser' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.social_teaser',
-            'config' => [
-                'type' => 'text',
-                'cols' => 30,
-                'rows' => 4,
-                'eval' => 'trim',
-            ],
-        ],
-        'theater_details' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.theater_details',
-            'config' => [
-                'type' => 'text',
-                'cols' => 40,
-                'rows' => 15,
-                'default' => '',
-                'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
-                'enableRichtext' => true,
-            ],
-        ],
-    ];
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_events2_domain_model_event', $extendedColumns);
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-        'tx_events2_domain_model_event',
-        'theater_details,--div--;LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.tab.social, release_date, social_teaser',
-        '',
-        'after:download_links'
-    );
-
+call_user_func(static function () {
     $newEventColumns = [
         'deadline' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.deadline',
+            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_events2_domain_model_event.deadline',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -61,8 +20,10 @@ call_user_func(function () {
         ],
         'reserve_period' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.reserve_period',
-            'description' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:tx_events2_domain_model_event.reserve_period.description',
+            'label' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_events2_domain_model_event.reserve_period',
+            'description' => 'LLL:EXT:events2_reserve_connector/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_events2_domain_model_event.reserve_period.description',
             'displayCond' => 'FIELD:registration_required:REQ:true',
             'config' => [
                 'type' => 'inline',
@@ -89,7 +50,9 @@ call_user_func(function () {
                     ],
                     'types' => [
                         '1' => [
-                            'showitem' => '--palette--;;date,--palette--;;max_participants,--palette--;;booking_restrictions',
+                            'showitem' => '--palette--;;date,' .
+                                '--palette--;;max_participants,' .
+                                '--palette--;;booking_restrictions',
                         ],
                     ],
                 ],
@@ -103,6 +66,7 @@ call_user_func(function () {
         'tx_events2_domain_model_event',
         $newEventColumns
     );
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tx_events2_domain_model_event',
         'deadline',
@@ -132,12 +96,14 @@ call_user_func(function () {
         'single,duration',
         'after:event_time'
     );
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tx_events2_domain_model_event',
         'location',
         'recurring',
         'after:l10n_parent'
     );
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tx_events2_domain_model_event',
         'organizer',
@@ -148,4 +114,14 @@ call_user_func(function () {
     // activate all checkboxes for "xth" and "weekday" as default
     $GLOBALS['TCA']['tx_events2_domain_model_event']['columns']['xth']['config']['default'] = 31;
     $GLOBALS['TCA']['tx_events2_domain_model_event']['columns']['weekday']['config']['default'] = 127;
+
+    // Reload form to show INLINE for timeslot of EXT:reserve
+    $GLOBALS['TCA']['tx_events2_domain_model_event']['columns']['registration_required']['onChange'] = 'reload';
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'tx_events2_domain_model_event',
+        'reserve_period',
+        'single',
+        'after:registration_required'
+    );
 });
