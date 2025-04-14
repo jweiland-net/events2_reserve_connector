@@ -2,7 +2,6 @@
 
 [![Packagist][packagist-logo-stable]][extension-packagist-url]
 [![Latest Stable Version][extension-build-shield]](https://packagist.org/packages/jweiland/events2-reserve-connector)
-[![License][LICENSE_URL]](https://packagist.org/packages/jweiland/events2-reserve-connector)
 [![Total Downloads][extension-downloads-badge]][extension-packagist-url]
 [![Monthly Downloads][extension-monthly-downloads]][extension-packagist-url]
 [![TYPO3 12.4][TYPO3-shield]][TYPO3-12-url]
@@ -57,5 +56,3 @@ module.
 [TYPO3-12-url]: https://get.typo3.org/version/12
 
 [TYPO3-shield]: https://img.shields.io/badge/TYPO3-12.4-green.svg?style=for-the-badge&logo=typo3
-
-[LICENSE_URL]: http://poser.pugx.org/jweiland/events2-reserve-connector/license?style=for-the-badge
