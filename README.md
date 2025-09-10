@@ -39,6 +39,12 @@ composer require jweiland/events2-reserve-connector
 Download and install `events2_reserve_connector` with the extension manager
 module.
 
+## 3 Support
+
+Free Support is available via [GitHub Issue Tracker](https://github.com/jweiland-net/events2_reserve_connector/issues).
+
+For commercial support, please contact us at [support@jweiland.net](support@jweiland.net).
+
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [extension-build-shield]: https://poser.pugx.org/jweiland/events2-reserve-connector/v/stable.svg?style=for-the-badge
